@@ -73,7 +73,7 @@ export async function getUserFromName(user: string): Promise<getUserFromNameResu
         error: undefined,
     };
 
-    if (parseInt(user)) {
+    if (/^\d+$/.test(user))  {
         logger.info(`getUserFromName: user is only made up of numbers, likely an ID. Skipping getUserFromName.`);
         resp.response = {
             steamid: user,

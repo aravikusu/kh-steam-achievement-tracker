@@ -1,8 +1,8 @@
 <script lang="ts">
   import { getModalStore, type ModalSettings } from "@skeletonlabs/skeleton";
   import { fetchingSteamData, steamUserName } from "./stores";
-    import WhatModal from "./components/modals/WhatModal.svelte";
-    import InstructionsModal from "./components/modals/InstructionsModal.svelte";
+  import WhatModal from "./components/modals/WhatModal.svelte";
+  import InstructionsModal from "./components/modals/InstructionsModal.svelte";
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center pt-5">
@@ -12,9 +12,10 @@
     <!-- / -->
     <div class="flex justify-center space-x-1">
       <p>
-        Put your Steam ID in below, submit, and we'll list your deets all
-        nice-like.<br />
-        Not your Steam <i>display name</i>. It's the one shown in the URL when you visit your profile.<br /><br />
+        Put your Steam ID in below, submit, and we'll list your achievements.<br
+        />
+        Not your Steam <i>display name</i>. It's the one shown in the URL when
+        you visit your profile.<br /><br />
         Keep in mind that your profile has to be public for this to work.<br />
         <InstructionsModal />
       </p>
@@ -27,9 +28,13 @@
         type="text"
         placeholder="Steam name"
       />
-      <button on:click={() => {
-        fetchingSteamData.set(true);
-      }} type="submit" class="btn variant-filled-surface m-2">Submit</button>
+      <button
+        on:click={() => {
+          fetchingSteamData.set(true);
+        }}
+        type="submit"
+        class="btn variant-filled-surface m-2">Submit</button
+      >
     </form>
   </div>
 </div>
